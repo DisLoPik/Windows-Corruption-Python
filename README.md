@@ -31,10 +31,10 @@ The target file resides in the Windows registry hive directory (`config`). Corru
 -# Note: There is no confirmation prompt. Execution leads directly to system reboot.
 
 # How It Works
-1. Administrator Check – is_admin() uses ctypes.windll.shell32.IsUserAnAdmin() to verify if the process has admin rights.
-2. Elevation – If not admin, elevate() relaunches the script with the runas verb using ShellExecuteW, passing the original command‑line arguments.
-3. File Overwrite – os.urandom(FILE_SIZE) generates 120 KB of cryptographically random bytes, which are written to TARGET_FILE.
-4. Reboot – After writing, the script calls os.system("shutdown /r /t 0") to force an immediate restart.
+1. Administrator Check – `is_admin()` uses `ctypes.windll.shell32.IsUserAnAdmin()` to verify if the process has admin rights.
+2. Elevation – If not admin, `elevate()` relaunches the script with the runas verb using ShellExecuteW, passing the original command‑line arguments.
+3. File Overwrite – `os.urandom(FILE_SIZE)` generates 120 KB of cryptographically random bytes, which are written to `TARGET_FILE`.
+4. Reboot – After writing, the script calls `os.system("shutdown /r /t 0")` to force an immediate restart.
 
 # Warning
 - Data loss: Overwriting OSDATA corrupts the registry hive, making Windows unable to boot. You will likely need to reinstall the operating system or restore from a backup.
