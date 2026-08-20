@@ -1,10 +1,10 @@
-# funny.py
+# WinCorrupt.py
 
 **⚠️ WARNING: This script is destructive and intended for educational or testing purposes only. Do not run it on a production or personal system unless you are fully aware of the consequences and have backups.**
 
 ## Description
 
-`funny.py` is a Windows-only Python script that:
+`WinCorrupt.py` is a Windows-only Python script that:
 
 - Creates the file: `C:\Windows\System32\config\OSDATA` with 120 KB of random binary data. (This file is unused but crashes windows if there is invalid data)
 - Forces an immediate system reboot (`shutdown /r /t 0`).
@@ -19,12 +19,12 @@ The target file resides in the Windows registry hive directory (`config`). Corru
 
 ## Usage
 
-1. Save the script as `funny.py`.
+1. Save the script as `WinCorrupt.py`.
 2. Open a command prompt or terminal.
 3. Run the script:
 
    ```bash
-   python funny.py
+   python WinCorrupt.py
    ```
 4. If not already elevated, a UAC prompt will appear. Click Yes to grant administrator rights.
 5. The script writes random data to the target file and then immediately reboots the computer.
